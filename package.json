@@ -1,0 +1,28 @@
+{
+  "name": "heidihx-api",
+  "description": "Haxe Externals Definitions for Heidi JS Module",
+  "keywords": [
+    "sakura",
+    "heidi",
+    "haxe"
+  ],
+  "author": "David Mouton",
+  "version": "2.0.2",
+  "license": "Happy Technologies",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "main": "",
+  "preferGlobal": false,
+  "homepage": "http://heidi-module-personnalisation.com/content/13-integration-de-l-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microclimat/HeidiHxAPI"
+  },
+  "dependencies": {
+    "haxe": "0.320.6",
+    "taminahx": ">=0.1.0",
+    "sakurahx-api":">=0.1.0",
+    "msignal": ">=1.2.3"
+  }
+}

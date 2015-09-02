@@ -1,0 +1,19 @@
+
+# Created by .ignore support plugin (hsz.mobi)
+# IDE files and folders
+.idea
+.idea*
+*.iml
+*.ipr
+*.iws
+*.codekit-project
+
+# Excluded folders
+out/*
+node_modules/*
+vendor
+
+# Cache
+*.cache
+.sass-cache
+cache/
