@@ -219,6 +219,7 @@ interface IExternalGalleryView {
 interface ITemplateGalleryComponent {
     var templates(get,set):Array<TemplateInfo>;
     var visible(get, set):Bool;
+    var changeSignal:Signal1<Int>;
 }
 
 interface IPictureEditorComponent extends IEditorComponent {
