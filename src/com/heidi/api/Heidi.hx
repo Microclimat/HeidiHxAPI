@@ -50,6 +50,23 @@ extern class Heidi {
      * @return result {ViewFactory} la factory
      */
     public function getViewFactory():ViewFactory;
+
+/**
+	 * Retire un écouteur
+	 * @method removeEventListener
+	 * @param	type {HeidiEventType} le type de l'evennement
+	 * @param	listener {HeidiEvent -> Void} la methode à invoquer
+	 */
+
+    public function removeEventListener(type:HeidiEventType, listener:Event<HeidiEventType> -> Void):Void ;
+
+/**
+	 * Retire tous les écouteurs
+	 * @method removeAllEventListeners
+	 * @param	type {HeidiEventType} le type de l'evennement
+	 */
+
+    public function removeAllEventListeners(type:HeidiEventType):Void ;
 }
 
 /**
