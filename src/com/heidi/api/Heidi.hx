@@ -67,6 +67,13 @@ extern class Heidi {
 	 */
 
     public function removeAllEventListeners(type:HeidiEventType):Void ;
+
+/**
+     * Affiche une personnalisation à partir de son Hash
+     * @method displayCustomerDesignByHash
+     * @param   hash {String} l'Id du CustomerDesign encodé
+     */
+    public function displayCustomerDesignByHash(hash:String):Void;
 }
 
 /**
@@ -198,14 +205,6 @@ interface ViewFactory {
 	 * @return {ITextEditorComponent} l'editeur de Text
 	 */
     public function createTextEditor(containerId:String):ITextEditorComponent;
-
-/**
-     * Affiche une personnalisation à partir de son Hash
-     * @method displayCustomerDesignByHash
-     * @param   hash {String} l'Id du CustomerDesign encodé
-     */
-    public function displayCustomerDesignByHash(hash:String):Void;
-
 
 }
 
