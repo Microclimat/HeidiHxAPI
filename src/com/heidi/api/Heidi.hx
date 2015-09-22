@@ -288,6 +288,7 @@ interface HeidiConfig {
     public var isLogged:Bool;
     public var addToCartButton:InputElement;
     public var canUploadMultipleImages:Bool;
+    public var availableFonts:Array<String>;
 
 }
 
