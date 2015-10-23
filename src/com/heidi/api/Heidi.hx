@@ -74,6 +74,13 @@ extern class Heidi {
      * @param   hash {String} l'Id du CustomerDesign encodé
      */
     public function displayCustomerDesignByHash(hash:String):Void;
+
+/**
+     * Retourne la reference au bus d'event
+     * @method getNotificationBus
+     * @return result {NotificationBus} le bus d'event
+     */
+    public function getNotificationBus():NotificationBus;
 }
 
 /**
@@ -205,13 +212,6 @@ interface ViewFactory {
 	 * @return {ITextEditorComponent} l'editeur de Text
 	 */
     public function createTextEditor(containerId:String):ITextEditorComponent;
-
-/**
-     * Retourne la reference au bus d'event
-     * @method getNotificationBus
-     * @return result {NotificationBus} le bus d'event
-     */
-    public function getNotificationBus():NotificationBus;
 }
 
 interface HeidiImage {
