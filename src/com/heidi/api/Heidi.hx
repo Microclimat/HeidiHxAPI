@@ -206,6 +206,12 @@ interface ViewFactory {
 	 */
     public function createTextEditor(containerId:String):ITextEditorComponent;
 
+/**
+     * Retourne la reference au bus d'event
+     * @method getNotificationBus
+     * @return result {NotificationBus} le bus d'event
+     */
+    public function getNotificationBus():NotificationBus;
 }
 
 interface HeidiImage {
@@ -289,7 +295,7 @@ interface HeidiConfig {
     public var addToCartButton:InputElement;
     public var canUploadMultipleImages:Bool;
     public var availableFonts:Array<String>;
-
+    public var galleryPictureWidth:Int;
 }
 
 interface IHostProxy {
@@ -309,6 +315,28 @@ interface IHostProxy {
 
 interface ILoginOrCreateAccountView {
     public var isNowLogged:Signal1<Bool>;
+}
+
+interface NotificationBus {
+    public var importImages:Signal1<Array<HeidiImage>>;
+    public var directImportImage:Signal1<HeidiImage>;
+    public var directImportImageInEditor:Signal1<HeidiImage>;
+    public var deleteImage:Signal1<HeidiImage>;
+    public var requestDeleteImage:Signal1<HeidiImage>;
+    public var dragImage:Signal1<HeidiImage>;
+    public var displayNotificationPopup:Signal1<NotificationParameters>;
+    public var displayFreezer:Signal1<String>;
+    public var elementSelected:Signal1<IDrawingElement>;
+    public var hideFreezer:Signal0;
+    public var imagesInEditorUpdated:Signal1<Array<HeidiImage>>;
+    public var requestPreviewImage:Signal0;
+    public var customerDesignAdded:Signal2<Float,String>;
+    public var addSavedImage:Signal1<HeidiImage>;
+    public var changePattern:Signal1<Int>;
+    public var unSelectAllGallery:Signal0;
+    public var editorReady:Signal0;
+    public var transformElement:Signal2<TransformType,Float>;
+    public var warningImage:Signal1<Picture>;
 }
 
 
