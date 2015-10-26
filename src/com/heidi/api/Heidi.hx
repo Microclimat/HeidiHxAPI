@@ -295,6 +295,7 @@ interface HeidiConfig {
     public var addToCartButton:InputElement;
     public var canUploadMultipleImages:Bool;
     public var availableFonts:Array<String>;
+    public var availableFontColors:Array<String>;
     public var galleryPictureWidth:Int;
 }
 
