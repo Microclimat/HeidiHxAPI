@@ -91,6 +91,12 @@ extern class Heidi {
 */
 interface ViewFactory {
 
+/**
+	 * Definie la Class à utiliser pour instancier un Editeur
+	 * @method setEditorClass
+	 * @param	type {Class<IEditorView>} le type
+	 */
+    public function setEditorClass(type:Class<IEditorView>):Void;
 
 /**
 	 * Definie la Class à utiliser pour instancier un Menu
@@ -147,6 +153,16 @@ interface ViewFactory {
 	 * @param	type {Class<ITextEditorComponent>} le type
 	 */
     public function setTextEditorClass(type:Class<ITextEditorComponent>):Void;
+
+/**
+	 * Crée une instance d'Editeur
+	 * @method createEditor
+	 * @param	patternId {Int} l'id du Pattern ou du CustomerDesign à charger
+	 * @param	isCustomerDesign {Bool} indique si l'id est celui d'un CustomerDesign
+	 * @param	containerId {String} l'id de la div contenant le Menu
+	 * @return {IEditorView} le Menu
+	 */
+    public function createEditor(patternId:Int, isCustomerDesign:Bool, containerId:String = ""):IEditorView;
 
 /**
 	 * Crée une instance de Menu
@@ -220,6 +236,53 @@ interface HeidiImage {
     public var url:URL;
     public var ref:Picture;
 
+}
+
+class TemplateModel {
+
+    public var preview:String;
+    public var areas:Array<AreaModel>;
+    public var square:Bool;
+
+    public function new() {
+    }
+
+    public static function fromXml(xmlTemplate:Element):TemplateModel {
+        var template = new TemplateModel();
+        template.preview = xmlTemplate.getAttribute('preview');
+        template.areas = new Array<AreaModel>();
+        template.square = (xmlTemplate.getAttribute('square') == "true") ? true : false;
+
+        var xmlAreas = xmlTemplate.getElementsByTagName('area');
+
+        for(i in 0...xmlAreas.length) {
+            template.areas.push(AreaModel.fromXml(cast xmlAreas[i]));
+        }
+
+        return template;
+    }
+}
+
+class AreaModel {
+
+    public var x:Float;
+    public var y:Float;
+    public var w:Float;
+    public var h:Float;
+
+    public function new() {
+    }
+
+    public static function fromXml(xmlArea:Element):AreaModel {
+        var area = new AreaModel();
+
+        area.x = cast xmlArea.getAttribute('x');
+        area.y = cast xmlArea.getAttribute('y');
+        area.w = cast xmlArea.getAttribute('w');
+        area.h = cast xmlArea.getAttribute('h');
+
+        return area;
+    }
 }
 
 interface IMenuView {
@@ -312,6 +375,20 @@ interface IHostProxy {
     public function loginOrCreateAccount(data:String):Void;
     public function getCustomerDesignToken(idC:Float):Void;
 
+}
+
+interface IEditorView {
+    public var isBusy:Bool = false;
+    public var customerDesignSaved:Signal2<Float, String>;
+    public var busyChange:Signal1<Bool>;
+    public var patternComplete:Signal1<PatternInfo>;
+
+    public function elementTransformHandler(type:TransformType,value:Float):Void;
+    public function addDefaultText():Void;
+    public function displayPatternById(patternId:Int):Void;
+    public function addCustomerDesign():Void;
+    public function displayCustomerDesignByHash(hash:String):Void;
+    public function changeLayout(model:TemplateModel, gallerieImages:Array<HeidiImage>):Void;
 }
 
 interface ILoginOrCreateAccountView {
