@@ -296,6 +296,7 @@ interface HeidiConfig {
     public var canUploadMultipleImages:Bool;
     public var availableFonts:Array<String>;
     public var galleryPictureWidth:Int;
+    public var sakuraConfig:Config;
 }
 
 interface IHostProxy {
