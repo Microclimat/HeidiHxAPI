@@ -416,6 +416,7 @@ interface NotificationBus {
     public var editorReady:Signal0;
     public var transformElement:Signal2<TransformType,Float>;
     public var warningImage:Signal1<Picture>;
+    public var browserNotCompatible:Signal0;
 }
 
 
