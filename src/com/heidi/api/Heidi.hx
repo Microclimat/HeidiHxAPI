@@ -1,8 +1,15 @@
 package com.heidi.api;
 
+import com.sakura.api.model.design.IDrawingElement;
+import com.sakura.api.model.design.Picture;
+import com.sakura.api.model.design.PictureFilter;
+import com.sakura.api.model.design.Text;
+import com.sakura.api.model.info.PatternInfo;
+import com.sakura.api.model.info.TemplateInfo;
+import com.sakura.api.model.transform.TransformType;
 import org.tamina.net.URL;
-import com.sakura.api.SakuraEditor;
-import com.sakura.api.SakuraIO;
+import com.sakura.api.editor.SakuraEditor;
+import com.sakura.api.io.SakuraIO;
 import js.html.Element;
 import org.tamina.events.Event;
 import js.html.InputElement;

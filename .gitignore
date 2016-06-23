@@ -17,3 +17,4 @@ vendor
 *.cache
 .sass-cache
 cache/
+testheidiapi.js
