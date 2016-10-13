@@ -372,7 +372,9 @@ interface HeidiConfig {
 
 interface IHostProxy {
     public var addToCartComplete:Signal0;
+    public var addToCartError:Signal0;
     public var saveCustomerDesignComplete:Signal0;
+    public var saveCustomerDesignError:Signal0;
     public var loginOrCreateAccountSuccess:Signal1<XMLHttpRequest>;
     public var loginOrCreateAccountError:Signal1<XMLHttpRequest>;
     public var getCustomerDesignTokenSuccess:Signal1<XMLHttpRequest>;
