@@ -29,6 +29,15 @@ extern class Heidi {
     public function init(config:HeidiConfig):Void;
 
     /**
+     * Affiche une fenêtre modale
+     * @method displayModal
+     * @param text {String} Le texte à afficher dans la modale
+     * @param title {String} Le titre de la modale
+     * @param level {LogLevel} Le niveau d'alerte de la modale
+     */
+    public function displayModal(text:String, ?title:String, ?level:LogLevel = LogLevel.INFO):Void;
+
+    /**
      * Change le patron courant pour celui de l'id passé en parametre
      * @method changePattern
      * @param   patternId {Int} l'Id du Patron
