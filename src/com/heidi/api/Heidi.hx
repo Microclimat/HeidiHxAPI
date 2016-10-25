@@ -46,6 +46,13 @@ extern class Heidi {
     public function changePattern(patternId:Int):Void;
 
     /**
+     * Prend en compte le changement de déclinaison du produit
+     * @method changeAttributes
+     * @param   attributes {Array<Int>} la liste d'ID attributes
+     */
+    public function changeAttributes(attributes:Array<Int>):Void;
+
+    /**
 	 * Ajoute un écouteur
 	 * @method addEventListener
 	 * @param	type {HeidiEventType} le type de l'evennement
