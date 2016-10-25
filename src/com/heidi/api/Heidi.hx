@@ -1,5 +1,6 @@
 package com.heidi.api;
 
+import js.html.ProgressEvent;
 import com.sakura.api.model.design.IDrawingElement;
 import com.sakura.api.model.design.Picture;
 import com.sakura.api.model.design.PictureFilter;
@@ -380,9 +381,9 @@ interface HeidiConfig {
 }
 
 interface IHostProxy {
-    public var addToCartComplete:Signal0;
+    public var addToCartComplete:Signal1<ProgressEvent>;
     public var addToCartError:Signal0;
-    public var saveCustomerDesignComplete:Signal0;
+    public var saveCustomerDesignComplete:Signal1<ProgressEvent>;
     public var saveCustomerDesignError:Signal0;
     public var loginOrCreateAccountSuccess:Signal1<XMLHttpRequest>;
     public var loginOrCreateAccountError:Signal1<XMLHttpRequest>;
