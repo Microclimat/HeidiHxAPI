@@ -105,6 +105,15 @@ extern class Heidi {
      * @return result {NotificationBus} le bus d'event
      */
     public function getNotificationBus():NotificationBus;
+
+
+    /**
+     * Retourne une chaîne de caractères traduite correspondant à la clé de traduction
+     * @method getTranslation
+     * @param key {String} la clé de traduction
+     * @return result {String} la chaîne traduite
+     */
+    public function getTranslation(key:String):String;
 }
 
 /**
