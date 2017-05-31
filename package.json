@@ -7,7 +7,7 @@
     "haxe"
   ],
   "author": "David Mouton",
-  "version": "2.1.6",
+  "version": "3.1.1",
   "license": "Happy Technologies",
   "engines": {
     "node": ">=0.8.0"
@@ -20,12 +20,14 @@
     "url": "https://github.com/Microclimat/HeidiHxAPI"
   },
   "dependencies": {
-    "haxe": "4.0.0",
+    "haxe": "4.1.0",
     "taminahx": ">=1.0.26",
-    "sakurahx-api":">=2.1.x",
+    "sakurahx-api":">=5.2.x",
+    "mconsole-npm": ">=1.6.1",
     "msignal": ">=1.2.3"
   },
-   "config": {
-    "haxe:version": "3.2.1"
+  "config": {
+    "haxe": "3.4.2",
+    "haxelib_version": "3.2.0-rc.1"
   }
 }

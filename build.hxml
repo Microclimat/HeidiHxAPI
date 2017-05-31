@@ -5,6 +5,7 @@
 -cp src
 -cp node_modules/taminahx
 -cp node_modules/msignal
+-cp node_modules/mconsole-npm
 -cp node_modules/sakurahx-api/src
 
 -js testheidiapi.js

@@ -475,7 +475,17 @@ typedef HeidiEvent = Event<HeidiEventType>;
 	 * @default "ready"
 	 */
     var READY = "ready";
-/**
+
+    /**
+	 * @property ERROR
+	 * @type String
+	 * @static
+	 * @readOnly
+	 * @default "error"
+	 */
+    var ERROR = "error";
+
+    /**
 	 * @property PATTERN_COMPLETE
 	 * @type String
 	 * @static
@@ -483,6 +493,15 @@ typedef HeidiEvent = Event<HeidiEventType>;
 	 * @default "patternComplete"
 	 */
     var PATTERN_COMPLETE = "patternComplete";
+
+    /**
+	 * @property ALBUM_RENAME
+	 * @type String
+	 * @static
+	 * @readOnly
+	 * @default "albumRename"
+	 */
+    var ALBUM_RENAME = "albumRename";
 
 
 }
