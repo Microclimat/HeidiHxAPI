@@ -465,9 +465,7 @@ interface NotificationBus {
 typedef HeidiEvent = Event<HeidiEventType>;
 
 @:enum abstract HeidiEventType(String) from String to String {
-
-
-/**
+    /**
 	 * @property READY
 	 * @type String
 	 * @static
@@ -503,5 +501,12 @@ typedef HeidiEvent = Event<HeidiEventType>;
 	 */
     var ALBUM_RENAME = "albumRename";
 
-
+    /**
+	 * @property ALBUM_CHANGE
+	 * @type String
+	 * @static
+	 * @readOnly
+	 * @default "albumChange"
+	 */
+    var ALBUM_CHANGE = "albumChange";
 }
